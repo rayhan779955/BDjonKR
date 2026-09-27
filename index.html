@@ -3,61 +3,1166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BDjonKR | Creative Identity</title>
+
+<title>BDjonKR | Premium Portfolio</title>
+
+<meta name="description" content="BDjonKR — Creative Identity, Portfolio, Design, Music & Digital Work.">
+<meta name="theme-color" content="#07110d">
+
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#07110d;color:#f5f7f6;line-height:1.6}
-header{position:sticky;top:0;background:#07110df2;border-bottom:1px solid #1b3428}
-nav{max-width:1050px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:25px;font-weight:800}.logo span,h1 span{color:#39d98a}
-nav a{color:#dce9e2;text-decoration:none;margin-left:18px;font-size:14px}
-.hero,section{max-width:1050px;margin:auto;padding:70px 20px}
-.hero{text-align:center;padding-top:90px}.badge{display:inline-block;border:1px solid #2c8c5b;border-radius:999px;padding:7px 14px;color:#55e49b;font-size:13px}
-h1{font-size:clamp(44px,10vw,82px);line-height:1.05;margin:22px 0}
-.hero p{max-width:650px;margin:auto;color:#aebdb5;font-size:18px}
-.buttons{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-block;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:700}
-.primary{background:#27c878;color:#04100a}.secondary{border:1px solid #345445;color:#fff}
-.title{text-align:center;font-size:32px;margin-bottom:30px}
-.about{text-align:center;max-width:760px;margin:auto;color:#b8c7bf}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#0d1c15;border:1px solid #1d382b;border-radius:18px;padding:25px}
-.card h3{color:#55e49b;margin-top:0}.card p{color:#aebdb5}
-footer{text-align:center;border-top:1px solid #1b3428;padding:35px 20px;color:#81938a}
-@media(max-width:700px){.grid{grid-template-columns:1fr}nav a{margin-left:8px}.hero{padding-top:65px}}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+:root{
+  --bg:#050907;
+  --bg2:#09140e;
+  --card:rgba(13,29,20,.72);
+  --text:#f5f8f6;
+  --muted:#9eafa6;
+  --green:#35e58d;
+  --green2:#20bd70;
+  --border:#1c3929;
+  --shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+body{
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(53,229,141,.10),transparent 28%),
+    radial-gradient(circle at 90% 20%,rgba(32,189,112,.08),transparent 25%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+body.light{
+  --bg:#f4f8f5;
+  --bg2:#eaf2ed;
+  --card:rgba(255,255,255,.78);
+  --text:#07100b;
+  --muted:#52645b;
+  --border:#cfddd4;
+}
+
+a{
+  color:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(5,9,7,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.light header{
+  background:rgba(244,248,245,.84);
+}
+
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  text-decoration:none;
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  color:var(--green);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-size:14px;
+  color:var(--text);
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:var(--green);
+}
+
+.nav-buttons{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.icon-btn,
+.menu-btn{
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text);
+  width:40px;
+  height:40px;
+  border-radius:11px;
+  cursor:pointer;
+  font-size:17px;
+}
+
+.menu-btn{
+  display:none;
+}
+
+/* HERO */
+
+.hero{
+  min-height:calc(100vh - 72px);
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:60px;
+  padding:80px 0;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 14px;
+  border:1px solid #2b8258;
+  border-radius:999px;
+  color:#61eaa2;
+  font-size:12px;
+  letter-spacing:1px;
+  background:rgba(53,229,141,.05);
+}
+
+h1{
+  font-size:clamp(48px,7vw,88px);
+  line-height:1;
+  letter-spacing:-4px;
+  margin:22px 0;
+}
+
+.green{
+  color:var(--green);
+}
+
+.hero-text{
+  max-width:650px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 21px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  border:1px solid var(--border);
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.primary{
+  background:var(--green);
+  color:#031008;
+  border-color:var(--green);
+  box-shadow:0 10px 35px rgba(53,229,141,.12);
+}
+
+.secondary{
+  background:rgba(255,255,255,.02);
+}
+
+/* PROFILE */
+
+.profile-area{
+  display:flex;
+  justify-content:center;
+  position:relative;
+}
+
+.profile-glow{
+  position:absolute;
+  width:260px;
+  height:260px;
+  background:rgba(53,229,141,.18);
+  filter:blur(70px);
+  border-radius:50%;
+}
+
+.profile{
+  position:relative;
+  width:min(360px,78vw);
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:32px;
+  border:2px solid rgba(53,229,141,.45);
+  padding:7px;
+  background:#0b1710;
+  box-shadow:var(--shadow);
+}
+
+/* SECTIONS */
+
+section{
+  padding:100px 0;
+}
+
+.section-head{
+  max-width:720px;
+  text-align:center;
+  margin:0 auto 45px;
+}
+
+.kicker{
+  color:var(--green);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+h2{
+  font-size:clamp(32px,5vw,48px);
+  line-height:1.1;
+  margin:10px 0 14px;
+}
+
+.section-head p{
+  color:var(--muted);
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.panel{
+  padding:30px;
+  border:1px solid var(--border);
+  border-radius:22px;
+  background:var(--card);
+  box-shadow:0 15px 50px rgba(0,0,0,.12);
+}
+
+.panel h3{
+  font-size:23px;
+  margin-bottom:12px;
+}
+
+.panel p{
+  color:var(--muted);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:25px;
+}
+
+.stat{
+  padding:16px;
+  text-align:center;
+  border:1px solid var(--border);
+  border-radius:15px;
+}
+
+.stat strong{
+  display:block;
+  color:var(--green);
+  font-size:25px;
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  padding:27px;
+  border:1px solid var(--border);
+  border-radius:21px;
+  background:var(--card);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#2e895d;
+  box-shadow:var(--shadow);
+}
+
+.card-icon{
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:rgba(53,229,141,.09);
+  color:var(--green);
+  font-size:23px;
+  margin-bottom:18px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* SKILLS */
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.skill{
+  padding:10px 16px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--muted);
+  background:var(--card);
+}
+
+/* PROJECTS */
+
+.project{
+  overflow:hidden;
+  padding:0;
+}
+
+.project-top{
+  height:170px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+  background:
+    radial-gradient(circle at center,rgba(53,229,141,.20),transparent 55%),
+    #0b1911;
+}
+
+.project-body{
+  padding:23px;
+}
+
+.project-body p{
+  margin-top:7px;
+  color:var(--muted);
+}
+
+.tags{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.tag{
+  font-size:11px;
+  padding:5px 9px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--muted);
+}
+
+/* CONTACT */
+
+.contact-box{
+  text-align:center;
+  padding:55px 25px;
+  border:1px solid var(--border);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at center,rgba(53,229,141,.10),transparent 60%),
+    var(--card);
+}
+
+.contact-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.contact-link{
+  text-decoration:none;
+  padding:13px 19px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  transition:.25s;
+}
+
+.contact-link:hover{
+  color:var(--green);
+  border-color:var(--green);
+  transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:35px 20px;
+  color:#7f9188;
+}
+
+.footer-logo{
+  font-size:22px;
+  font-weight:900;
+  color:var(--text);
+}
+
+.footer-logo span{
+  color:var(--green);
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:900;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  background:#25D366;
+  color:white;
+  font-size:25px;
+  box-shadow:0 10px 35px rgba(37,211,102,.3);
+}
+
+/* BACK TOP */
+
+.top{
+  position:fixed;
+  right:20px;
+  bottom:88px;
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  cursor:pointer;
+  display:none;
+}
+
+/* ANIMATION */
+
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:.7s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:4%;
+    right:4%;
+    flex-direction:column;
+    align-items:stretch;
+    gap:5px;
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:rgba(7,16,11,.97);
+  }
+
+  .light .nav-links{
+    background:#fff;
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:10px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding-top:60px;
+  }
+
+  .hero-text{
+    margin:auto;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .profile-area{
+    order:-1;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:500px){
+
+  .logo{
+    font-size:21px;
+  }
+
+  h1{
+    font-size:48px;
+    letter-spacing:-2px;
+  }
+
+  section{
+    padding:75px 0;
+  }
+
+  .profile{
+    width:230px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
+
 <body>
-<header><nav>
-<div class="logo">BD<span>jonKR</span></div>
-<div><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></div>
-</nav></header>
+
+<!-- HEADER -->
+
+<header>
+<nav class="nav container">
+
+<a href="#home" class="logo">
+BD<span>jonKR</span>
+</a>
+
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="nav-buttons">
+<button class="icon-btn" id="themeBtn">☼</button>
+<button class="menu-btn" id="menuBtn">☰</button>
+</div>
+
+</nav>
+</header>
+
 
 <main>
-<section class="hero">
-<div class="badge">CREATIVE IDENTITY • MUSIC • DESIGN</div>
-<h1>Welcome to <span>BDjonKR</span></h1>
-<p>একটি personal creative space — যেখানে পরিচয়, ডিজাইন, মিউজিক এবং নতুন আইডিয়া একসাথে তৈরি হয়।</p>
-<div class="buttons"><a class="btn primary" href="#work">Explore</a><a class="btn secondary" href="#contact">Contact</a></div>
+
+<!-- HERO -->
+
+<section class="hero container" id="home">
+
+<div class="reveal">
+
+<div class="badge">
+✦ CREATIVE • DIGITAL • PERSONAL BRAND
+</div>
+
+<h1>
+Welcome to<br>
+<span class="green">BDjonKR</span>
+</h1>
+
+<p class="hero-text">
+একটি premium personal digital space —
+যেখানে creativity, design, digital work,
+music এবং নতুন ideas একসাথে জায়গা পায়।
+</p>
+
+<div class="buttons">
+
+<a href="#portfolio" class="btn primary">
+Explore Portfolio ↗
+</a>
+
+<a href="https://wa.me/8801339687614"
+target="_blank"
+class="btn secondary">
+WhatsApp Me
+</a>
+
+</div>
+
+</div>
+
+
+<div class="profile-area reveal">
+
+<div class="profile-glow"></div>
+
+<img
+src="profile.jpg"
+alt="BDjonKR Profile Photo"
+class="profile"
+>
+
+</div>
+
 </section>
 
-<section id="about"><h2 class="title">About BDjonKR</h2>
-<p class="about">BDjonKR হলো একটি creative identity ও personal brand। এখানে project, portfolio, social links, music এবং অন্যান্য কাজ যোগ করা যাবে।</p>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="kicker">About Me</div>
+
+<h2>
+My Digital Identity
+</h2>
+
+<p>
+BDjonKR হলো আমার personal creative identity এবং
+digital portfolio space।
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="panel reveal">
+
+<h3>Who I Am</h3>
+
+<p>
+আমি Rayhan। BDjonKR-এর মাধ্যমে আমার creative
+ideas, digital projects, design, media এবং future
+work এক জায়গায় তুলে ধরার চেষ্টা করছি।
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<strong>01</strong>
+Personal Brand
+</div>
+
+<div class="stat">
+<strong>∞</strong>
+Creative Ideas
+</div>
+
+<div class="stat">
+<strong>24/7</strong>
+Online
+</div>
+
+</div>
+
+</div>
+
+
+<div class="panel reveal">
+
+<h3>My Vision</h3>
+
+<p>
+Simple কিন্তু premium একটি digital presence তৈরি করা,
+যেটা mobile এবং desktop—দুই জায়গাতেই সুন্দর,
+দ্রুত এবং professional দেখাবে।
+</p>
+
+<div class="buttons">
+<a href="#contact" class="btn primary">
+Let's Connect
+</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="work"><h2 class="title">What I Do</h2>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="kicker">What I Do</div>
+
+<h2>
+Creative & Digital Work
+</h2>
+
+<p>
+আমার creative এবং digital কাজগুলো সুন্দরভাবে
+উপস্থাপনের জন্য এই space।
+</p>
+
+</div>
+
+
 <div class="grid">
-<div class="card"><h3>Creative Identity</h3><p>নিজস্ব brand identity ও digital presence সাজানো।</p></div>
-<div class="card"><h3>Design</h3><p>Creative visual ideas, graphics এবং web design।</p></div>
-<div class="card"><h3>Music & Media</h3><p>Music, media এবং digital content-এর জন্য একটি central space।</p></div>
-</div></section>
 
-<section id="contact"><h2 class="title">Let's Connect</h2>
-<p class="about">তোমার social media ও contact links এখানে পরে যোগ করা যাবে।</p>
-<div class="buttons"><a class="btn primary" href="mailto:your@email.com">Email Me</a></div>
+<div class="card reveal">
+<div class="card-icon">✦</div>
+<h3>Creative Identity</h3>
+<p>
+Personal brand, digital identity এবং online presence।
+</p>
+</div>
+
+
+<div class="card reveal">
+<div class="card-icon">◆</div>
+<h3>Web Design</h3>
+<p>
+Modern, responsive এবং mobile-friendly website concept।
+</p>
+</div>
+
+
+<div class="card reveal">
+<div class="card-icon">♫</div>
+<h3>Music & Media</h3>
+<p>
+Music, video এবং creative media content showcase।
+</p>
+</div>
+
+
+<div class="card reveal">
+<div class="card-icon">⚡</div>
+<h3>Digital Projects</h3>
+<p>
+নতুন ideas এবং digital projects সুন্দরভাবে উপস্থাপন।
+</p>
+</div>
+
+
+<div class="card reveal">
+<div class="card-icon">◈</div>
+<h3>Portfolio</h3>
+<p>
+Projects এবং future work-এর professional showcase।
+</p>
+</div>
+
+
+<div class="card reveal">
+<div class="card-icon">∞</div>
+<h3>Future Ideas</h3>
+<p>
+নতুন creative experiments এবং upcoming projects।
+</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- SKILLS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="kicker">Skills & Interests</div>
+
+<h2>
+Things I Love Creating
+</h2>
+
+</div>
+
+<div class="skills reveal">
+
+<span class="skill">Creative Design</span>
+<span class="skill">Web Design</span>
+<span class="skill">Digital Media</span>
+<span class="skill">Music</span>
+<span class="skill">Brand Identity</span>
+<span class="skill">Photography</span>
+<span class="skill">Creative Ideas</span>
+<span class="skill">Technology</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="kicker">Portfolio</div>
+
+<h2>
+Featured Work
+</h2>
+
+<p>
+এখানে তোমার আসল projects এবং future work
+ধীরে ধীরে যোগ করা যাবে।
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<article class="card project reveal">
+
+<div class="project-top">
+✦
+</div>
+
+<div class="project-body">
+
+<h3>
+BDjonKR Website
+</h3>
+
+<p>
+Personal premium portfolio এবং digital identity website।
+</p>
+
+<div class="tags">
+<span class="tag">Web</span>
+<span class="tag">Brand</span>
+<span class="tag">Portfolio</span>
+</div>
+
+</div>
+
+</article>
+
+
+<article class="card project reveal">
+
+<div class="project-top">
+◈
+</div>
+
+<div class="project-body">
+
+<h3>
+Creative Project
+</h3>
+
+<p>
+তোমার পরবর্তী creative project এখানে showcase হবে।
+</p>
+
+<div class="tags">
+<span class="tag">Creative</span>
+<span class="tag">Design</span>
+</div>
+
+</div>
+
+</article>
+
+
+<article class="card project reveal">
+
+<div class="project-top">
+♫
+</div>
+
+<div class="project-body">
+
+<h3>
+Music & Media
+</h3>
+
+<p>
+Music, video এবং media projects-এর জন্য dedicated space।
+</p>
+
+<div class="tags">
+<span class="tag">Music</span>
+<span class="tag">Media</span>
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box reveal">
+
+<div class="kicker">Get In Touch</div>
+
+<h2>
+Let's Connect
+</h2>
+
+<p class="section-head" style="margin-bottom:0">
+যোগাযোগ করতে নিচের যেকোনো মাধ্যম ব্যবহার করতে পারো।
+</p>
+
+
+<div class="contact-links">
+
+<a
+class="contact-link"
+href="https://wa.me/8801339687614"
+target="_blank">
+💬 WhatsApp
+</a>
+
+
+<a
+class="contact-link"
+href="https://www.facebook.com/share/1K7aqmGCr2/"
+target="_blank">
+ⓕ Facebook
+</a>
+
+
+<a
+class="contact-link"
+href="mailto:rayhan779955@gmail.com">
+✉ Email
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 </main>
 
-<footer>© 2026 BDjonKR. All rights reserved.</footer>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+BD<span>jonKR</span>
+</div>
+
+<p>
+© 2026 BDjonKR · All Rights Reserved
+</p>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/8801339687614"
+target="_blank"
+class="whatsapp"
+aria-label="WhatsApp">
+💬
+</a>
+
+
+<!-- BACK TO TOP -->
+
+<button class="top" id="topBtn">
+↑
+</button>
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+
+/* DARK / LIGHT MODE */
+
+const themeBtn = document.getElementById("themeBtn");
+
+if(localStorage.getItem("bdjonkr-theme") === "light"){
+  document.body.classList.add("light");
+}
+
+themeBtn.addEventListener("click", () => {
+
+  document.body.classList.toggle("light");
+
+  if(document.body.classList.contains("light")){
+    localStorage.setItem("bdjonkr-theme","light");
+  }else{
+    localStorage.setItem("bdjonkr-theme","dark");
+  }
+
+});
+
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+
+  });
+
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+
+/* BACK TO TOP */
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+  if(window.scrollY > 500){
+    topBtn.style.display = "block";
+  }else{
+    topBtn.style.display = "none";
+  }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
+</script>
+
 </body>
 </html>
